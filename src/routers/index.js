@@ -5,8 +5,8 @@ export default function Routers () {
     return (
         <Switch>
             {
-                router.map(({path, component, exact}) => {
-                    return <Route path={path} exact={exact} component={component}/>
+                router.map(({path, Component, exact}, index) => {
+                    return <Route path={path} exact={exact} component={() => <Component/>} key={`route-${index}`}/>
                 })
             }
         </Switch>

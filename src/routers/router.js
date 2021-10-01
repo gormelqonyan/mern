@@ -1,20 +1,21 @@
-import {getStorage} from "../helpers/utils";
-import Login from "../pages/Login";
+import {getStorage} from "helpers/utils";
+import Login from "pages/Login";
+import Register from "../pages/Register";
 
 const loginRouter = [
     {
         path: "/login",
-        component: () => <Login/>,
+        Component:  Login,
         exact: true
     },
     {
         path: "/registration",
-        component: () => <div>Registration page</div>,
+        Component: Register,
         exact: true
     },
     {
         path: "*",
-        component: () => <div>Redirect page</div>,
+        Component: Login,
         exact: true
     },
 ]
@@ -23,11 +24,11 @@ const homeRouter = [
     {
         path: "/",
         exact: true,
-        component: () => <div>Home page</div>
+        Component: Login
     },
     {
         path: "*",
-        component: () => <div>Page Not Found</div>,
+        Component: Login,
         exact: true
     }
 ]
