@@ -1,7 +1,3 @@
-import Form from "./Form"
-import Input from "./Input"
-
-export {
-    Form,
-    Input
-}
+export {default as Form} from "./Form"
+export {default as Input} from "./Input"
+export {default as Upload} from "./Upload"

@@ -1,36 +1,24 @@
 import React from "react"
 import { useForm } from "react-hook-form"
 
+import "./form.scss"
+
 export const Form = ({ defaultValues, children, onSubmit }) => {
-    const { handleSubmit, register } = useForm({ defaultValues })
+    const { handleSubmit, register, watch } = useForm({ defaultValues })
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} className={"form"}>
             {
                 React.Children.map(children, (child, index) => {
-
-                    if (typeof child.type !== "function") {
-                        return React.createElement(child.type, {
-                            ...{
-                                ...child.props,
-                                key: index
-                            }
-                        })
-                    }
-
                     return child.props.name
                         ? React.createElement(child.type, {
                             ...{
                                 ...child.props,
                                 register: register,
-                                key: child.props.name + index
+                                key: child.props.name + index,
+                                watch,
                             }
                         })
-                        : React.createElement(child.type, {
-                            ...{
-                                ...child.props,
-                                key: index
-                            }
-                        })
+                        : child
                 })
             }
         </form>

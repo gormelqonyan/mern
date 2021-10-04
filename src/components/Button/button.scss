@@ -1,0 +1,24 @@
+.button {
+  padding: 12px 0;
+  text-align: center;
+  background-color: var(--colorBlue);
+  color: var(--colorWhite);
+  border-radius: 5px;
+  border: none;
+  text-transform: uppercase;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.button-link {
+  text-align: center;
+
+  a {
+    font-size: 14px;
+    color: var(--colorBlue);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+
+}

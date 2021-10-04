@@ -1,6 +1,7 @@
 import {getStorage} from "helpers/utils";
 import Login from "pages/Login";
-import Register from "../pages/Register";
+import Register from "pages/Register";
+import Redirect from "pages/Redirect";
 
 const loginRouter = [
     {
@@ -9,13 +10,13 @@ const loginRouter = [
         exact: true
     },
     {
-        path: "/registration",
+        path: "/signup",
         Component: Register,
         exact: true
     },
     {
         path: "*",
-        Component: Login,
+        Component: Redirect,
         exact: true
     },
 ]
